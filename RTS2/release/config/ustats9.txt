@@ -1,0 +1,41 @@
+battlelord
+health 20
+armor 0
+speed 2
+price 100
+queuetime 100
+scanrange 1000
+firerange 210
+ROE 2
+ROF 50
+spritename spr/battlelord.gif
+r 255
+g 255
+b 255
+sizex 115
+sizey 125
+think battleLordThink
+update battleLordUpdate
+fire minigun
+upfreq 500
+
+spiderdemon
+health 10
+armor 0
+speed 4
+price 100
+queuetime 250
+scanrange 1000
+firerange 300
+ROE 2
+ROF 30
+spritename spr/arachnotron.gif
+r 255
+g 255
+b 255
+sizex 120
+sizey 55
+think battleLordThink
+update battleLordUpdate
+fire minigun2
+upfreq 500

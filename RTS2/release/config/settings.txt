@@ -1,0 +1,15 @@
+sound
+fxvolume 1.0
+musicvolume 0.7
+mute 0
+
+HUD
+minimap 32 501 250 250
+infobar 607 470 400 250
+player 300 700 200 18
+alpha 1.0
+
+game
+scrollspeed 0.7
+tooltips 1
+resolution 1280 800
