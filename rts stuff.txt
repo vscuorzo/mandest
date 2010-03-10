@@ -1,0 +1,45 @@
+***BUGS***
+- Dequeue gets stuck on first unit queued, then dumps queue rapidly
+- Fix menu options
+- Pathfinding & collision detection with grid (fix grid dimensional math)
+
+
+*setup config file system* - universal settings file with 1 load & save function, add more error checking, develop manscript language
+*make memory usage more dynamic* - use malloc/calloc and sizeof to grab memory with size based on number of players in game
+**check code** - assign all newly allocated/deallocated memory to NULL, define NULL as 0
+
+
+--- Random ---
+
+timer function - global clock, getTime method, create timer struct holding trigger time and function (one for each queue, queue for general timed events)
+unit stats
+editor mode
+new game - submenu - factions, starting funds, starting locations, map, team colors
+tech tree
+economy
+display option - resolution
+unit/structure tooltips
+artwork - sprite sheets, interface icons, weapons & effects, terrain (blender?)
+sound effects
+use caching when possible
+import/export data as xml, manscript only in console
+pathfinding - use vector comparisons instead of grid? (rather than traversing a massive array representing all locations on the map, just check the vectors of entities that can be collided with)
+entity list design - create large array of entities (reserves memory) and array of pointers to these entities. Pointer array is sorted by position vectors and structured as binary search tree (AVL/Red-black/B-tree?) using x, y, z coordinates concatenated as the key = much faster searches = much faster collision detection & pathfinding. All position-modifying functions must trigger tree maintenance function
+throttle background tasks
+
+
+--- Unit Ideas ---
+
+Name: Blob
+Description: Amorphous glob that is made up of a bunch of small organisms that are mostly harmless on their own but combine to form powerful and dangerous creatures. The blob will change it's shape (as well as its stats) based on what it is doing. If it has to attack a heavily armored unit, it will form a large creature that does a lot of damage. Against something like a squad of infantry it will form into a swarm of smaller, faster, anti-infantry creatures. As it loses health, it loses some of the small organisms and can't take on certain forms until it replaces them. Can combine with other blobs to increase strength and transformation possibilities. (inspired by slime molds)
+Strong against: All unit types.
+Weak against: Explosives, flame, other area effect weapons
+
+
+--- Gameplay Ideas ---
+
+Logistics
+Require the players to consider things like supply lines rather than pulling from global resources. Resources will be gathered by certain units and delivered to depots/silos. When units/structures are to be made, materials need to be transported to the factories or construction sites in order for building to proceed. These transportation mechanisms will be setup both manually and automatically. Supply routes can be changed manually at any time but will be setup automatically when buildings are made. When construction starts on a building, it will scan for the nearest supply stash and link itself to it so that resources will be transferred. When a new resource storage structure is made, it will search for nearby structures and link to them if it is closer to whatever they are currently linked to. Supply routes could potentially be modified so that waypoints can be followed instead of a direct path so units can bypass dangerous areas automatically. Tech upgrades can improve logistics capabilities, possibly providing a nearly global resource pool. Transport units can include land or air vehicles depending on faction and distance from destination, should be able to manually choose from the building requiring the resources.
+
+Tech Tree
+Simple yet effective way to upgrade player capabilities. This will include improvements to logistics, unit stats, unit types, structure types, structure stats, and superweapons or super units. Upgrades will have to be researched and this requires time, resources, and possibly other structures for things farther down in the tree. All factions have some similar tech and some unique options.
